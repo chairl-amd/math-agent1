@@ -1,0 +1,105 @@
+{
+  "generated_at": "2026-11-14T22:33:16+08:00",
+  "cases": [
+    {
+      "id": "image_02",
+      "expected": "pass",
+      "actual": "pass",
+      "hit": true,
+      "elapsed_sec": 6.682,
+      "error": null,
+      "pipeline_ok": true
+    },
+    {
+      "id": "image_05",
+      "expected": "skip",
+      "actual": "unknown",
+      "hit": false,
+      "elapsed_sec": 4.897,
+      "error": null,
+      "pipeline_ok": true
+    },
+    {
+      "id": "image_07",
+      "expected": "fail",
+      "actual": "fail",
+      "hit": true,
+      "elapsed_sec": 17.736,
+      "error": null,
+      "pipeline_ok": true
+    }
+  ],
+  "metrics": {
+    "total_cases": 3,
+    "hits": 2,
+    "overall_accuracy": 0.6667,
+    "correct_samples": 1,
+    "correct_pass_count": 1,
+    "positive_recall": 1.0,
+    "incorrect_samples": 1,
+    "incorrect_fail_count": 1,
+    "negative_recall": 1.0,
+    "boundary_samples": 1,
+    "boundary_rejected_count": 0,
+    "boundary_rejection_rate": 0.0,
+    "true_positive": 1,
+    "false_positive": 0,
+    "false_negative": 0,
+    "fail_precision": 1.0,
+    "fail_recall": 1.0,
+    "fail_f1": 1.0
+  },
+  "confusion": {
+    "expected_labels": [
+      "pass",
+      "fail",
+      "skip"
+    ],
+    "actual_labels": [
+      "pass",
+      "fail",
+      "non_formula",
+      "parse_error",
+      "timeout",
+      "error",
+      "pipeline_error",
+      "incomplete",
+      "unknown"
+    ],
+    "matrix": {
+      "pass": {
+        "pass": 1,
+        "fail": 0,
+        "non_formula": 0,
+        "parse_error": 0,
+        "timeout": 0,
+        "error": 0,
+        "pipeline_error": 0,
+        "incomplete": 0,
+        "unknown": 0
+      },
+      "fail": {
+        "pass": 0,
+        "fail": 1,
+        "non_formula": 0,
+        "parse_error": 0,
+        "timeout": 0,
+        "error": 0,
+        "pipeline_error": 0,
+        "incomplete": 0,
+        "unknown": 0
+      },
+      "skip": {
+        "pass": 0,
+        "fail": 0,
+        "non_formula": 0,
+        "parse_error": 0,
+        "timeout": 0,
+        "error": 0,
+        "pipeline_error": 0,
+        "incomplete": 0,
+        "unknown": 1
+      }
+    }
+  }
+}

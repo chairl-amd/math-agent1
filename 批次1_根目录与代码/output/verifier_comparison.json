@@ -1,0 +1,724 @@
+{
+  "generated_at": "2026-11-15T12:05:27+08:00",
+  "api_key_configured": true,
+  "timeout_seconds": 240,
+  "case_counts": {
+    "incorrect": 3,
+    "structural": 3,
+    "total": 6
+  },
+  "cases": [
+    {
+      "id": "image_03",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.cpp",
+      "note": "LU 局部递推式可对照，但 A=LU 整体关系未完成任意 n 的严格符号证明"
+    },
+    {
+      "id": "image_04",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.cpp",
+      "note": "Navier-Stokes PDE：规范化残差一致，但原始 LaTeX 环境词被解析器误读，未完成严格符号等价"
+    },
+    {
+      "id": "image_07",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+      "note": "图正确、代码把 Ry 转置，校验应判 fail"
+    },
+    {
+      "id": "lu_upper_bound",
+      "kind": "structural",
+      "expected": "fail",
+      "latex_file": "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.tex",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.cpp",
+      "image": "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.png",
+      "note": "图与代码都把 U_ij 的求和上界写成 k<j，偏离标准定义 k<i"
+    },
+    {
+      "id": "matmul_missing_k",
+      "kind": "structural",
+      "expected": "fail",
+      "latex_file": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.tex",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+      "image": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.png",
+      "note": "图按完整维度求和，代码少遍历最后一个 k"
+    },
+    {
+      "id": "conv_shift",
+      "kind": "structural",
+      "expected": "fail",
+      "latex_file": "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.tex",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.cpp",
+      "image": "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.png",
+      "note": "图使用 k<i 的完整边界，代码使用 k+1<i 少一项"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "image_03",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 55.813,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_03_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_03",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 163.015,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_03_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_04",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 35.969,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_04_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_04",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 34.516,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_04_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_07",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 65.234,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_07_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_07",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 55.063,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_07_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "lu_upper_bound",
+      "kind": "structural",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 24.968,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\lu_upper_bound_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.cpp",
+        "-l",
+        "U_{ij}=A_{ij}-\\sum_{k<j}L_{ik}U_{kj}\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "lu_upper_bound",
+      "kind": "structural",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 17.453,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\lu_upper_bound_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.cpp",
+        "-l",
+        "U_{ij}=A_{ij}-\\sum_{k<j}L_{ik}U_{kj}\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "structural",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 8.141,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-l",
+        "c_{ij}=\\sum_{k=0}^{n-1}a_{ik}b_{kj}\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "structural",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 11.938,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-l",
+        "c_{ij}=\\sum_{k=0}^{n-1}a_{ik}b_{kj}\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "conv_shift",
+      "kind": "structural",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 9.265,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\conv_shift_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.cpp",
+        "-l",
+        "y_i=\\sum_{k=0}^{i-1}x_{i-k}h_k\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "conv_shift",
+      "kind": "structural",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 35.735,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": true,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "network_calls": 2,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\conv_shift_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.cpp",
+        "-l",
+        "y_i=\\sum_{k=0}^{i-1}x_{i-k}h_k\n"
+      ],
+      "stderr": ""
+    }
+  ],
+  "summary": {
+    "sympy-only": {
+      "total": 6,
+      "captured": 6,
+      "capture_rate": 1.0,
+      "explicit_captured": 1,
+      "explicit_rate": 0.1667,
+      "undetermined": 5,
+      "average_elapsed_seconds": 33.232,
+      "network_calls": 0
+    },
+    "hybrid": {
+      "total": 6,
+      "captured": 6,
+      "capture_rate": 1.0,
+      "explicit_captured": 5,
+      "explicit_rate": 0.8333,
+      "undetermined": 1,
+      "average_elapsed_seconds": 52.953,
+      "network_calls": 12
+    }
+  },
+  "conclusion": "- 仅 hybrid 给出明确判错：image_07, lu_upper_bound, matmul_missing_k, conv_shift。这是由本次报告中的实际状态差异直接得到。\n- 两者都明确判错：image_03。\n- 两者都只能判 unknown/error：image_04。\n- 两者都漏：无。\n- 明确判错率提升：66.66 个百分点；hybrid 实际网络调用 12 次。"
+}

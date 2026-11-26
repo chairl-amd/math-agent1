@@ -1,0 +1,41 @@
+{
+  "source": "D:\\math-agent\\tests\\benchmark\\correct\\image_06.cpp",
+  "rounds": 3,
+  "cache_disabled_rounds": [
+    {
+      "round": 1,
+      "ok": true,
+      "text": "C_{ij}=\\sum_{k=0}^{p-1}A_{ik}B_{kj},\\quad 0\\le i<n,\\;0\\le j<m\nC=AB,\\quad A\\in\\mathbb{R}^{n\\times p},\\;B\\in\\mathbb{R}^{p\\times m},\\;C\\in\\mathbb{R}^{n\\times m}",
+      "error": "",
+      "elapsed": 6.94,
+      "finish_reason": "stop"
+    },
+    {
+      "round": 2,
+      "ok": true,
+      "text": "C_{ij}=\\sum_{k=0}^{p-1}A_{ik}B_{kj}\nC=AB",
+      "error": "",
+      "elapsed": 3.75,
+      "finish_reason": "stop"
+    },
+    {
+      "round": 3,
+      "ok": true,
+      "text": "C_{ij}=\\sum_{k=0}^{p-1}A_{ik}B_{kj},\\quad i=0,\\ldots,n-1,\\;j=0,\\ldots,m-1\nC=AB,\\quad A\\in\\mathbb{R}^{n\\times p},\\;B\\in\\mathbb{R}^{p\\times m},\\;C\\in\\mathbb{R}^{n\\times m}",
+      "error": "",
+      "elapsed": 3.7,
+      "finish_reason": "stop"
+    }
+  ],
+  "strict_text_unique_outputs": 3,
+  "strict_text_consistent": false,
+  "semantic_unique_signatures": 1,
+  "semantic_consistent": true,
+  "core_formula_rounds": 3,
+  "cache_enabled_consistent": true,
+  "notes": [
+    "temperature=0 已强制，但模型仍可能改变行序、索引起止与冗余维度声明；",
+    "生产路径启用持久化翻译缓存后，同一输入的重复调用结果严格一致；",
+    "需要更强鲁棒性时可用 MATH_AGENT_TRANSLATE_VOTE=3 开启多数投票。"
+  ]
+}

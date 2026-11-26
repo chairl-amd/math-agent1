@@ -1,0 +1,799 @@
+{
+  "generated_at": "2026-11-15T18:29:36+08:00",
+  "api_key_configured": true,
+  "timeout_seconds": 240,
+  "case_counts": {
+    "incorrect": 5,
+    "structural": 1,
+    "total": 6
+  },
+  "verifier_chain": [
+    "sympy",
+    "deepseek@deepseek-v4-1-flash-261017",
+    "qwen-vl@qwen3-vl-plus"
+  ],
+  "cases": [
+    {
+      "id": "image_07",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+      "note": "图正确、代码把 Ry 转置，校验应判 fail"
+    },
+    {
+      "id": "sign_flip",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.cpp",
+      "note": "图是减号，代码写成加号（符号相反）"
+    },
+    {
+      "id": "off_by_one_sum",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.cpp",
+      "note": "代码少累加最后一项（i+1<n）"
+    },
+    {
+      "id": "missing_sqrt",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.cpp",
+      "note": "代码返回平方和，缺少最外层开方"
+    },
+    {
+      "id": "matmul_missing_k",
+      "kind": "incorrect",
+      "expected": "fail",
+      "image": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.png",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+      "note": "图按完整维度求和，代码少遍历最后一个 k"
+    },
+    {
+      "id": "matmul_missing_k",
+      "kind": "structural",
+      "expected": "fail",
+      "latex_file": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.tex",
+      "cpp": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+      "image": "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.png",
+      "note": "图按完整维度求和，代码少遍历最后一个 k"
+    }
+  ],
+  "results": [
+    {
+      "case_id": "image_07",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 12.797,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 1
+        },
+        "verify": {
+          "hits": 2,
+          "misses": 4,
+          "writes": 4,
+          "errors": 1
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 3,
+          "misses": 5,
+          "writes": 5,
+          "errors": 2
+        },
+        "hits": 3,
+        "misses": 5,
+        "writes": 5,
+        "errors": 2
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_07_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "image_07",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 53.359,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 2,
+          "misses": 4,
+          "writes": 4,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 4,
+          "misses": 4,
+          "writes": 4,
+          "errors": 0
+        },
+        "hits": 4,
+        "misses": 4,
+        "writes": 4,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\image_07_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "sign_flip",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 4.329,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 8,
+          "writes": 8,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 9,
+          "writes": 9,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 9,
+        "writes": 9,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\sign_flip_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "sign_flip",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 76.562,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 8,
+          "writes": 8,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 2,
+          "misses": 8,
+          "writes": 8,
+          "errors": 0
+        },
+        "hits": 2,
+        "misses": 8,
+        "writes": 8,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\sign_flip_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\sign_flip.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "off_by_one_sum",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 6.016,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 2,
+          "writes": 2,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 2,
+        "writes": 2,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\off_by_one_sum_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "off_by_one_sum",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 31.078,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 2,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "hits": 2,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\off_by_one_sum_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\off_by_one_sum.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "missing_sqrt",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 8.594,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 2,
+          "writes": 2,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 2,
+        "writes": 2,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\missing_sqrt_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "missing_sqrt",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 11.546,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 2,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "hits": 2,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\missing_sqrt_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\missing_sqrt.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "incorrect",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 6.063,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 2,
+          "writes": 2,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 2,
+        "writes": 2,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "incorrect",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 10.828,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 2,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "hits": 2,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.png"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "structural",
+      "mode": "sympy-only",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "undetermined",
+      "elapsed_seconds": 0.938,
+      "status": "latex_vs_cpp:unknown",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "sympy-only",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "network_calls": 0,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "sympy-only",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_sympy-only",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-l",
+        "c_{ij}=\\sum_{k=0}^{n-1}a_{ik}b_{kj}\n"
+      ],
+      "stderr": ""
+    },
+    {
+      "case_id": "matmul_missing_k",
+      "kind": "structural",
+      "mode": "hybrid",
+      "verdict": "fail",
+      "captured": true,
+      "verdict_quality": "explicit",
+      "elapsed_seconds": 8.984,
+      "status": "latex_vs_cpp:not_equivalent",
+      "error": "",
+      "returncode": 1,
+      "verifier_mode": "hybrid",
+      "cache": {
+        "disabled": false,
+        "ocr": {
+          "hits": 0,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "verify": {
+          "hits": 0,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "translate": {
+          "hits": 1,
+          "misses": 0,
+          "writes": 0,
+          "errors": 0
+        },
+        "total": {
+          "hits": 1,
+          "misses": 1,
+          "writes": 1,
+          "errors": 0
+        },
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "network_calls": 4,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--verifier-mode",
+        "hybrid",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_verifier_comparison_tmp\\matmul_missing_k_hybrid",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp",
+        "-l",
+        "c_{ij}=\\sum_{k=0}^{n-1}a_{ik}b_{kj}\n"
+      ],
+      "stderr": ""
+    }
+  ],
+  "summary": {
+    "sympy-only": {
+      "total": 6,
+      "captured": 6,
+      "capture_rate": 1.0,
+      "explicit_captured": 3,
+      "explicit_rate": 0.5,
+      "undetermined": 3,
+      "average_elapsed_seconds": 6.456,
+      "network_calls": 0
+    },
+    "hybrid": {
+      "total": 6,
+      "captured": 6,
+      "capture_rate": 1.0,
+      "explicit_captured": 6,
+      "explicit_rate": 1.0,
+      "undetermined": 0,
+      "average_elapsed_seconds": 32.059,
+      "network_calls": 24
+    }
+  },
+  "conclusion": "- 仅 hybrid 给出明确判错：missing_sqrt, matmul_missing_k。这是由本次报告中的实际状态差异直接得到。\n- 两者都明确判错：image_07, sign_flip, off_by_one_sum。\n- 两者都只能判 unknown/error：无。\n- 两者都漏：无。\n- 明确判错率提升：50.00 个百分点；hybrid 实际网络调用 24 次。"
+}

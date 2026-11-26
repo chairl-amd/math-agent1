@@ -1,0 +1,151 @@
+{
+  "timestamp": "2026-11-14T01:03:45",
+  "cpp": [
+    {
+      "name": "matrix_mul",
+      "compile_ok": true,
+      "exit": 0,
+      "stdout": "max_err = 5.960e-08",
+      "elapsed": 0.51
+    },
+    {
+      "name": "rotate_y_bug",
+      "compile_ok": true,
+      "exit": 0,
+      "stdout": "got=(0.8776, 0.0000, 0.4794) want=(0.8776, 0.0000, -0.4794) err=0.9589",
+      "elapsed": 0.33
+    },
+    {
+      "name": "lu_decomp",
+      "compile_ok": true,
+      "exit": 0,
+      "stdout": "x = [0.99999863, 1.00001264, 0.99997753, 1.00001073]\nmax|x - x_true| = 2.247e-05  (float eps ~ 1.2e-07)",
+      "elapsed": 0.16
+    },
+    {
+      "name": "conjugate_gradient",
+      "compile_ok": true,
+      "exit": 0,
+      "stdout": "iterations = 5, residual = 4.913e-09\nx = [0.496154, 0.984615, 1.442308, 1.784616, 1.696154]",
+      "elapsed": 0.25
+    }
+  ],
+  "symbol": [
+    {
+      "name": "动能方程",
+      "latex": "K = mc^2",
+      "expect": "K - m*c**2",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.257
+    },
+    {
+      "name": "三角恒等式",
+      "latex": "\\sin^2\\theta + \\cos^2\\theta",
+      "expect": "1",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.035
+    },
+    {
+      "name": "分式",
+      "latex": "\\frac{a+b}{c-d}",
+      "expect": "(a+b)/(c-d)",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.019
+    },
+    {
+      "name": "勾股定理",
+      "latex": "a^2 + b^2 = c^2",
+      "expect": "a**2 + b**2 - c**2",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.008
+    },
+    {
+      "name": "对数乘积",
+      "latex": "\\log(xy) = \\log x + \\log y",
+      "expect": "log(x*y) - (log(x)+log(y))",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.04
+    },
+    {
+      "name": "平方差",
+      "latex": "x^2 - 1",
+      "expect": "(x-1)*(x+1)",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.008
+    },
+    {
+      "name": "余弦零值",
+      "latex": "\\cos(0)",
+      "expect": "1",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.009
+    },
+    {
+      "name": "根式",
+      "latex": "\\sqrt{x^2 + y^2}",
+      "expect": "sqrt(x**2 + y**2)",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.003
+    },
+    {
+      "name": "和式展开",
+      "latex": "\\sum_{i=1}^{n} i",
+      "expect": "n*(n+1)/2",
+      "ok": true,
+      "expected": true,
+      "pass": true,
+      "status": "equivalent",
+      "detail": "simplify(a-b)=0",
+      "elapsed": 0.017
+    },
+    {
+      "name": "反例(不等)",
+      "latex": "x + 1",
+      "expect": "x + 2",
+      "ok": false,
+      "expected": false,
+      "pass": true,
+      "status": "not_equivalent",
+      "detail": "数值不一致：最差点相对误差 1.807e+00",
+      "elapsed": 0.005
+    }
+  ],
+  "ocr": {
+    "pix2text_installed": true,
+    "model_loadable": false,
+    "error": ""
+  },
+  "elapsed": 5.58
+}

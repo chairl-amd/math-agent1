@@ -1,0 +1,778 @@
+{
+  "generated_at": "2026-11-14T22:19:41+08:00",
+  "api_key_configured": true,
+  "timeout_seconds": 180,
+  "case_counts": {
+    "normal": 20,
+    "abnormal": 4,
+    "total": 24
+  },
+  "summary": {
+    "normal_total": 20,
+    "normal_json_success": 20,
+    "normal_process_success_rate": 1.0,
+    "validation_total": 3,
+    "validation_passed": 1,
+    "validation_pass_rate": 0.3333,
+    "negative_total": 6,
+    "negative_caught": 6,
+    "negative_capture_rate": 1.0,
+    "elapsed_average_seconds": 9.507,
+    "elapsed_median_seconds": 2.992,
+    "elapsed_p95_seconds": 19.767,
+    "cache_hits": 17,
+    "cache_misses": 14,
+    "cache_writes": 12,
+    "cache_hit_rate": 0.5484,
+    "abnormal_total": 4,
+    "abnormal_graceful": 4,
+    "abnormal_graceful_rate": 1.0
+  },
+  "results": [
+    {
+      "id": "image_01",
+      "category": "benchmark",
+      "description": "benchmark/correct",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": true,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 5.394,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_01",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_01.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_01.cpp"
+      ]
+    },
+    {
+      "id": "image_02",
+      "category": "benchmark",
+      "description": "benchmark/correct",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": true,
+      "returncode": 0,
+      "json_ok": true,
+      "elapsed_seconds": 6.615,
+      "report_ok": true,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": false,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_02",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_02.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_02.cpp"
+      ]
+    },
+    {
+      "id": "image_03",
+      "category": "benchmark",
+      "description": "benchmark/incorrect",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 91.028,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_03",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_03.cpp"
+      ]
+    },
+    {
+      "id": "image_04",
+      "category": "benchmark",
+      "description": "benchmark/incorrect",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 10.597,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_04",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_04.cpp"
+      ]
+    },
+    {
+      "id": "image_05",
+      "category": "benchmark",
+      "description": "benchmark/boundary",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 19.767,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 2,
+        "writes": 2,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_05",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\boundary\\image_05.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\boundary\\image_05.cpp"
+      ]
+    },
+    {
+      "id": "image_06",
+      "category": "benchmark",
+      "description": "benchmark/correct",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": true,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 8.76,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_06",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_06.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_06.cpp"
+      ]
+    },
+    {
+      "id": "image_07",
+      "category": "benchmark",
+      "description": "benchmark/incorrect",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 10.121,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\image_07",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.png",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\incorrect\\image_07.cpp"
+      ]
+    },
+    {
+      "id": "structural_lu_upper_bound",
+      "category": "structural",
+      "description": "图与代码都把 U_ij 的求和上界写成 k<j，偏离标准定义 k<i",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 8.448,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\structural_lu_upper_bound",
+        "-l",
+        "U_{ij}=A_{ij}-\\sum_{k<j}L_{ik}U_{kj}\n",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\lu_upper_bound.cpp"
+      ]
+    },
+    {
+      "id": "structural_matmul_missing_k",
+      "category": "structural",
+      "description": "图按完整维度求和，代码少遍历最后一个 k",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 9.512,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\structural_matmul_missing_k",
+        "-l",
+        "c_{ij}=\\sum_{k=0}^{n-1}a_{ik}b_{kj}\n",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\matmul_missing_k.cpp"
+      ]
+    },
+    {
+      "id": "structural_conv_shift",
+      "category": "structural",
+      "description": "图使用 k<i 的完整边界，代码使用 k+1<i 少一项",
+      "normal": true,
+      "validation_applicable": true,
+      "expected_ok": false,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 14.398,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\structural_conv_shift",
+        "-l",
+        "y_i=\\sum_{k=0}^{i-1}x_{i-k}h_k\n",
+        "-c",
+        "D:\\math-agent\\tests\\benchmark\\structural_errors\\conv_shift.cpp"
+      ]
+    },
+    {
+      "id": "formula_01",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.556,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_01",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_01.png"
+      ]
+    },
+    {
+      "id": "formula_02",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.549,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_02",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_02.png"
+      ]
+    },
+    {
+      "id": "formula_03",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.533,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_03",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_03.png"
+      ]
+    },
+    {
+      "id": "formula_04",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.537,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_04",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_04.png"
+      ]
+    },
+    {
+      "id": "formula_05",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.538,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_05",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_05.png"
+      ]
+    },
+    {
+      "id": "formula_06",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.54,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_06",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_06.png"
+      ]
+    },
+    {
+      "id": "formula_07",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.545,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_07",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_07.png"
+      ]
+    },
+    {
+      "id": "formula_08",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.567,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_08",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_08.png"
+      ]
+    },
+    {
+      "id": "formula_09",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.55,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_09",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_09.png"
+      ]
+    },
+    {
+      "id": "formula_10",
+      "category": "formula",
+      "description": "仅测试公式图片 OCR 流程",
+      "normal": true,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 0.589,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\formula_10",
+        "-i",
+        "D:\\math-agent\\tests\\formula\\formula_10.png"
+      ]
+    },
+    {
+      "id": "abnormal_empty_png",
+      "category": "abnormal",
+      "description": "0 字节图片文件",
+      "normal": false,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 1.407,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 1,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "没有获得可用 LaTeX（图片 OCR 失败且未直接提供 --latex）",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\abnormal_empty_png",
+        "-i",
+        "D:\\math-agent\\.tmp\\empty.png"
+      ]
+    },
+    {
+      "id": "abnormal_not_image",
+      "category": "abnormal",
+      "description": "扩展名与内容均不是图片",
+      "normal": false,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 1.398,
+      "report_ok": false,
+      "cache": {
+        "hits": 0,
+        "misses": 1,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "没有获得可用 LaTeX（图片 OCR 失败且未直接提供 --latex）",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\abnormal_not_image",
+        "-i",
+        "D:\\math-agent\\.tmp\\not_image.txt"
+      ]
+    },
+    {
+      "id": "abnormal_missing_image",
+      "category": "abnormal",
+      "description": "不存在的图片路径",
+      "normal": false,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 2,
+      "json_ok": false,
+      "elapsed_seconds": 0.549,
+      "report_ok": null,
+      "cache": {
+        "hits": 0,
+        "misses": 0,
+        "writes": 0,
+        "errors": 0
+      },
+      "error": "[错误] 图片路径不存在或不是文件：D:\\math-agent\\.tmp\\missing_image.png",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\abnormal_missing_image",
+        "-i",
+        "D:\\math-agent\\.tmp\\missing_image.png"
+      ]
+    },
+    {
+      "id": "abnormal_empty_cpp",
+      "category": "abnormal",
+      "description": "0 字节 C++ 文件配合正常图片",
+      "normal": false,
+      "validation_applicable": false,
+      "expected_ok": null,
+      "returncode": 1,
+      "json_ok": true,
+      "elapsed_seconds": 6.615,
+      "report_ok": false,
+      "cache": {
+        "hits": 1,
+        "misses": 1,
+        "writes": 1,
+        "errors": 0
+      },
+      "error": "",
+      "traceback": false,
+      "graceful_failure": true,
+      "command": [
+        "D:\\math-agent\\.python312\\python.exe",
+        "D:\\math-agent\\agent\\main.py",
+        "--json",
+        "--out",
+        "D:\\math-agent\\output\\_stress_tmp\\abnormal_empty_cpp",
+        "-i",
+        "D:\\math-agent\\tests\\benchmark\\correct\\image_02.png",
+        "-c",
+        "D:\\math-agent\\.tmp\\empty.cpp"
+      ]
+    }
+  ],
+  "weaknesses": [
+    "预期通过但 report.ok 未通过的用例：image_01，image_06。"
+  ]
+}
