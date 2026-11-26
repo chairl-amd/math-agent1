@@ -1,0 +1,26 @@
+[
+  {
+    "id": "lu_upper_bound",
+    "expected": "fail",
+    "latex_file": "lu_upper_bound.tex",
+    "cpp": "lu_upper_bound.cpp",
+    "image": "lu_upper_bound.png",
+    "note": "图与代码都把 U_ij 的求和上界写成 k<j，偏离标准定义 k<i"
+  },
+  {
+    "id": "matmul_missing_k",
+    "expected": "fail",
+    "latex_file": "matmul_missing_k.tex",
+    "cpp": "matmul_missing_k.cpp",
+    "image": "matmul_missing_k.png",
+    "note": "图按完整维度求和，代码少遍历最后一个 k"
+  },
+  {
+    "id": "conv_shift",
+    "expected": "fail",
+    "latex_file": "conv_shift.tex",
+    "cpp": "conv_shift.cpp",
+    "image": "conv_shift.png",
+    "note": "图使用 k<i 的完整边界，代码使用 k+1<i 少一项"
+  }
+]
